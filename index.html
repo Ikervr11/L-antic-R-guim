@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="Aprende la Revolución Francesa con una web interactiva, imágenes, fechas y un asistente de historia.">
+  <title>Revolución Francesa | Historia interactiva</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="#inicio">HISTORIA<span>✦</span></a>
+    <nav>
+      <a href="#temas">Temas</a>
+      <a href="#cronologia">Cronología</a>
+      <a href="#personajes">Personajes</a>
+      <a href="#test">Test</a>
+      <a href="#asistente">Mini IA</a>
+    </nav>
+    <button id="themeButton" class="icon-button" aria-label="Cambiar tema">☀️</button>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-copy">
+        <span class="eyebrow">HISTORIA · SIGLO XVIII</span>
+        <h1>La Revolución <span>Francesa</span></h1>
+        <p>Descubre las causas, los acontecimientos y las consecuencias de una revolución que transformó la historia.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#temas">Explorar temas ↓</a>
+          <a class="button secondary" href="#asistente">Preguntar a la IA ✦</a>
+        </div>
+        <div class="stats">
+          <div><strong>1789</strong><small>Inicio</small></div>
+          <div><strong>1799</strong><small>Golpe de Napoleón</small></div>
+          <div><strong>10 años</strong><small>Periodo aproximado</small></div>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Prise_de_la_Bastille.jpg"
+          alt="Representación histórica de la toma de la Bastilla">
+        <div class="image-caption">1789 · El comienzo de una nueva era</div>
+      </div>
+    </section>
+
+    <section class="section" id="temas">
+      <div class="section-heading">
+        <span class="eyebrow">EXPLORA</span>
+        <h2>Aprende por temas</h2>
+        <p>Selecciona una tarjeta para ir directamente a su explicación.</p>
+      </div>
+      <label class="search-label" for="topicSearch">Buscar un tema</label>
+      <input id="topicSearch" class="search-input" placeholder="Ej.: Ilustración, Bastilla, Napoleón...">
+      <div class="topic-grid" id="topicGrid">
+        <a class="topic-card" data-search="antiguo regimen monarquia absolutismo sociedad estamental" href="#antiguo-regimen">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Three_estates.jpg" alt="Representación de los estamentos" loading="lazy">
+          <div><span>01 · SOCIEDAD</span><h3>El Antiguo Régimen</h3><p>La monarquía absoluta y la sociedad estamental.</p><b>Explorar →</b></div>
+        </a>
+        <a class="topic-card" data-search="causas crisis economia impuestos desigualdad" href="#causas">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Declaration_of_the_Rights_of_Man_and_of_the_Citizen_in_1789.jpg" alt="Documento histórico de los derechos de 1789" loading="lazy">
+          <div><span>02 · CAUSAS</span><h3>¿Por qué empezó?</h3><p>Las crisis y las desigualdades que provocaron el cambio.</p><b>Explorar →</b></div>
+        </a>
+        <a class="topic-card" data-search="ilustracion rousseau voltaire montesquieu razon" href="#ilustracion">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Voltaire.jpg" alt="Retrato de Voltaire" loading="lazy">
+          <div><span>03 · IDEAS</span><h3>La Ilustración</h3><p>Libertad, razón y nuevas ideas políticas.</p><b>Explorar →</b></div>
+        </a>
+        <a class="topic-card" data-search="1789 bastilla estados generales asamblea nacional" href="#1789">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Prise_de_la_Bastille.jpg" alt="Toma de la Bastilla" loading="lazy">
+          <div><span>04 · ACONTECIMIENTOS</span><h3>El año 1789</h3><p>La Asamblea Nacional y la toma de la Bastilla.</p><b>Explorar →</b></div>
+        </a>
+        <a class="topic-card" data-search="derechos constitucion asamblea reformas igualdad" href="#reformas">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Declaration_of_the_Rights_of_Man_and_of_the_Citizen_in_1789.jpg" alt="Declaración de derechos" loading="lazy">
+          <div><span>05 · REFORMAS</span><h3>Derechos y Constitución</h3><p>Las transformaciones legales y políticas.</p><b>Explorar →</b></div>
+        </a>
+        <a class="topic-card" data-search="republica terror robespierre directorio napoleon" href="#republica">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Napoleon_Bonaparte.jpg" alt="Retrato de Napoleón Bonaparte" loading="lazy">
+          <div><span>06 · ETAPAS FINALES</span><h3>Del Terror a Napoleón</h3><p>La república, el Directorio y el golpe de 1799.</p><b>Explorar →</b></div>
+        </a>
+      </div>
+      <p id="noResults" class="muted" hidden>No se han encontrado temas. Prueba otra palabra.</p>
+    </section>
+
+    <section class="lesson" id="antiguo-regimen">
+      <div><span class="tag">TEMA 01</span><h2>El Antiguo Régimen</h2>
+        <p>Era el sistema político y social anterior a la Revolución Francesa.</p>
+        <ul>
+          <li><b>Monarquía absoluta:</b> el rey concentraba gran parte del poder.</li>
+          <li><b>Clero:</b> el estamento religioso, con privilegios.</li>
+          <li><b>Nobleza:</b> grupo privilegiado que poseía tierras y disfrutaba de ventajas sociales.</li>
+          <li><b>Tercer estado:</b> burgueses, artesanos, trabajadores y campesinos; constituían la mayor parte de la población.</li>
+          <li><b>Economía agraria:</b> la agricultura era fundamental y las malas cosechas podían provocar hambre y subidas de precios.</li>
+        </ul>
+        <p class="key-point">Idea clave: la sociedad estaba dividida y los privilegios dependían, en gran parte, del nacimiento.</p>
+      </div>
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Three_estates.jpg" alt="Los tres estamentos" loading="lazy">
+    </section>
+
+    <section class="lesson" id="causas">
+      <div><span class="tag">TEMA 02</span><h2>Las causas de la Revolución</h2>
+        <ul>
+          <li><b>Crisis financiera:</b> el Estado acumulaba deudas y necesitaba aumentar sus ingresos.</li>
+          <li><b>Desigualdad fiscal:</b> el tercer estado soportaba muchas cargas mientras existían privilegios.</li>
+          <li><b>Subida del precio del pan:</b> las malas cosechas empeoraron las condiciones de vida.</li>
+          <li><b>Desigualdad social:</b> parte de la población reclamaba representación y un sistema más justo.</li>
+          <li><b>Ideas ilustradas:</b> se difundieron ideas sobre derechos, soberanía nacional y separación de poderes.</li>
+          <li><b>Crisis política:</b> los Estados Generales se reunieron en 1789, pero surgieron conflictos sobre la representación y el voto.</li>
+        </ul>
+      </div>
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Declaration_of_the_Rights_of_Man_and_of_the_Citizen_in_1789.jpg" alt="Documento de la Revolución" loading="lazy">
+    </section>
+
+    <section class="lesson" id="ilustracion">
+      <div><span class="tag">TEMA 03</span><h2>La Ilustración</h2>
+        <p>Fue un movimiento intelectual del siglo XVIII que defendía la razón y cuestionaba las autoridades tradicionales.</p>
+        <ul>
+          <li><b>Montesquieu:</b> defendía la separación de poderes.</li>
+          <li><b>Voltaire:</b> criticaba la intolerancia y defendía la libertad de pensamiento.</li>
+          <li><b>Rousseau:</b> desarrolló ideas sobre soberanía popular y contrato social.</li>
+        </ul>
+        <p>Estas ideas influyeron en los revolucionarios, aunque la revolución también estuvo motivada por problemas económicos y políticos.</p>
+      </div>
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Voltaire.jpg" alt="Voltaire" loading="lazy">
+    </section>
+
+    <section class="lesson" id="1789">
+      <div><span class="tag">TEMA 04</span><h2>El comienzo: 1789</h2>
+        <ul>
+          <li><b>Mayo:</b> se reúnen los Estados Generales para abordar la crisis del Estado.</li>
+          <li><b>Junio:</b> representantes del tercer estado se proclaman Asamblea Nacional.</li>
+          <li><b>14 de julio:</b> la población de París toma la Bastilla, símbolo del poder real.</li>
+          <li><b>Agosto:</b> se aprueba la Declaración de los Derechos del Hombre y del Ciudadano y se eliminan privilegios feudales.</li>
+          <li><b>Octubre:</b> una marcha popular lleva a la familia real a París.</li>
+        </ul>
+      </div>
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Prise_de_la_Bastille.jpg" alt="Toma de la Bastilla" loading="lazy">
+    </section>
+
+    <section class="lesson" id="reformas">
+      <div><span class="tag">TEMA 05</span><h2>Derechos y Constitución</h2>
+        <ul>
+          <li><b>Declaración de 1789:</b> proclamó principios como la libertad y la igualdad ante la ley.</li>
+          <li><b>Soberanía nacional:</b> la autoridad política debía basarse en la nación.</li>
+          <li><b>Constitución de 1791:</b> limitó el poder del rey e instauró una monarquía constitucional.</li>
+          <li><b>Reformas:</b> se modificaron instituciones y relaciones entre Iglesia y Estado.</li>
+        </ul>
+        <p class="key-point">La proclamación de derechos no significó igualdad política inmediata para todos los grupos, incluidas las mujeres.</p>
+      </div>
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Declaration_of_the_Rights_of_Man_and_of_the_Citizen_in_1789.jpg" alt="Declaración de los Derechos del Hombre y del Ciudadano" loading="lazy">
+    </section>
+
+    <section class="lesson" id="republica">
+      <div><span class="tag">TEMA 06</span><h2>República, Terror y Napoleón</h2>
+        <ul>
+          <li><b>1792:</b> cae la monarquía y se proclama la república.</li>
+          <li><b>1793:</b> Luis XVI es ejecutado y se intensifican los conflictos.</li>
+          <li><b>1793–1794:</b> el Terror, periodo de represión política bajo el gobierno revolucionario.</li>
+          <li><b>1794:</b> Robespierre cae del poder.</li>
+          <li><b>1795:</b> comienza el Directorio, un régimen con gran inestabilidad.</li>
+          <li><b>1799:</b> Napoleón Bonaparte da un golpe de Estado e inicia el Consulado.</li>
+        </ul>
+      </div>
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Napoleon_Bonaparte.jpg" alt="Napoleón Bonaparte" loading="lazy">
+    </section>
+
+    <section class="section" id="cronologia">
+      <div class="section-heading"><span class="eyebrow">FECHAS CLAVE</span><h2>Línea del tiempo</h2></div>
+      <div class="timeline">
+        <article><strong>1789</strong><p>Inicio de la revolución y toma de la Bastilla.</p></article>
+        <article><strong>1791</strong><p>Constitución y monarquía constitucional.</p></article>
+        <article><strong>1792</strong><p>Proclamación de la república.</p></article>
+        <article><strong>1793–1794</strong><p>Etapa del Terror.</p></article>
+        <article><strong>1795</strong><p>Comienza el Directorio.</p></article>
+        <article><strong>1799</strong><p>Golpe de Estado de Napoleón.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="personajes">
+      <div class="section-heading"><span class="eyebrow">PROTAGONISTAS</span><h2>Personajes importantes</h2></div>
+      <div class="people-grid">
+        <article class="person"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Louis_XVI_of_France.jpg" alt="Luis XVI" loading="lazy"><h3>Luis XVI</h3><p>Rey de Francia al comienzo de la revolución. Fue ejecutado en 1793.</p></article>
+        <article class="person"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Maximilien_de_Robespierre.jpg" alt="Maximilien Robespierre" loading="lazy"><h3>Robespierre</h3><p>Figura destacada de los jacobinos durante la etapa del Terror.</p></article>
+        <article class="person"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Napoleon_Bonaparte.jpg" alt="Napoleón Bonaparte" loading="lazy"><h3>Napoleón Bonaparte</h3><p>Militar que tomó el poder en 1799 mediante un golpe de Estado.</p></article>
+        <article class="person"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Voltaire.jpg" alt="Voltaire" loading="lazy"><h3>Voltaire</h3><p>Pensador ilustrado que defendió la tolerancia y criticó los abusos de poder.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="test">
+      <div class="section-heading"><span class="eyebrow">PONTE A PRUEBA</span><h2>Test de historia</h2><p>Responde a las preguntas y comprueba tu resultado.</p></div>
+      <div class="quiz-card">
+        <div id="quizQuestion"></div>
+        <div id="quizOptions" class="quiz-options"></div>
+        <p id="quizFeedback" aria-live="polite"></p>
+        <div class="quiz-actions"><button class="button primary" id="checkAnswer">Comprobar</button><button class="button secondary" id="nextQuestion" hidden>Siguiente →</button></div>
+        <p id="quizScore" class="muted">Pregunta 1 de 5</p>
+      </div>
+    </section>
+
+    <section class="section ai-section" id="asistente">
+      <div class="section-heading"><span class="eyebrow">ASISTENTE DE ESTUDIO</span><h2>Tu mini IA de historia ✦</h2><p>Pregunta lo que quieras sobre la Revolución Francesa. El asistente utiliza una API real y está configurado para centrarse en este tema.</p></div>
+      <div class="chat-card">
+        <div id="chatMessages" class="chat-messages" aria-live="polite">
+          <div class="message assistant">¡Hola! Soy tu asistente de historia. ¿Qué quieres saber sobre la Revolución Francesa?</div>
+        </div>
+        <div class="suggestions">
+          <button data-question="¿Cuáles fueron las causas de la Revolución Francesa?">Causas</button>
+          <button data-question="¿Qué pasó el 14 de julio de 1789?">La Bastilla</button>
+          <button data-question="¿Qué fue el Terror?">El Terror</button>
+          <button data-question="¿Qué cambió con la revolución?">Consecuencias</button>
+        </div>
+        <form id="chatForm" class="chat-form">
+          <input id="chatInput" maxlength="1000" placeholder="Escribe tu pregunta..." autocomplete="off" required>
+          <button id="sendButton" class="button primary" type="submit">Enviar ↑</button>
+        </form>
+        <p class="muted small">No escribas datos personales. Las respuestas pueden contener errores; contrasta los datos importantes con tus apuntes.</p>
+      </div>
+    </section>
+  </main>
+  <footer>Proyecto educativo · La Revolución Francesa · <a href="#inicio">Volver arriba ↑</a></footer>
+</body>
+</html>
